@@ -19,6 +19,13 @@ let secondTotal = prompt("How many hours at " + secondCompany + "?") * secondPay
 let thirdTotal = prompt("Finally! How many at " + thirdCompany + "?") * thirdPay
 let totalPay = firstTotal + secondTotal + thirdTotal
 alert("You get paid " + totalPay + "$!")
+let canEnroll = prompt("If you have room in your schedule, and if the class has room please type 'Yes'. If you do not please type 'No'")
+alert(canEnroll + "! To entering this class.")
+alert("Now lets buy stuff!")
+let purchasedItem = prompt("How many items did you buy?")
+let premiumMem = prompt("Are you a premium member?")
+alert("You purchased " + purchasedItem + " Items and you said " + premiumMem + " to being a member. Thank you! But the product offer is expired.")
+
 
 
 
