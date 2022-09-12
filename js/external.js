@@ -25,6 +25,8 @@ alert("Now lets buy stuff!")
 let purchasedItem = prompt("How many items did you buy?")
 let premiumMem = prompt("Are you a premium member?")
 alert("You purchased " + purchasedItem + " Items and you said " + premiumMem + " to being a member. Thank you! But the product offer is expired.")
+// Could have used the && or ||, with confirm to establish true or false values
+//
 
 
 
