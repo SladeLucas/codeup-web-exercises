@@ -1,13 +1,18 @@
 "use strict";
 
-/**
- * TODO:
- * Create a function called 'sayHello' that takes a parameter 'name'.
- * When called, the function should return a message that says hello to the passed in name.
- *
- * Example
- * > sayHello("codeup") // returns "Hello, codeup!"
- */
+//**
+//* TODO:
+//* Create a function called 'sayHello' that takes a parameter 'name'.
+//* When called, the function should return a message that says hello to the passed in name.
+//*
+//* Example
+//* > sayHello("codeup") // returns "Hello, codeup!"
+//*/
+function sayHello(name) {
+    return "Hello, " + name + "!"
+}
+let userName = "Lucas"
+console.log(sayHello(userName));
 
 /**
  * TODO:
