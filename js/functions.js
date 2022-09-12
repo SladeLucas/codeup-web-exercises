@@ -85,17 +85,21 @@ let tipAmount = prompt("In decimal amounts, what percentage are you going to tip
 let billTotal = prompt("How much was the bill?")
 
 alert("$" + calculateTip(tipAmount, billTotal));
-/**
- * TODO:
- * Create a function named `applyDiscount`. This function should accept a price
- * (before a discount is applied), and a discount percentage (a number between 0
- * and 1). It should return the result of applying the discount to the original
- * price.
- *
- * Example:
- * > var originalPrice = 100;
- * > var discountPercent = .2; // 20%
- * > applyDiscount(originalPrice, discountPercent) // 80
- *
- * > applyDiscount(45.99, 0.12) // 40.4712
- */
+///**
+// * TODO:
+// * Create a function named `applyDiscount`. This function should accept a price
+// * (before a discount is applied), and a discount percentage (a number between 0
+// * and 1). It should return the result of applying the discount to the original
+// * price.
+function applyDiscount(price, discount) {
+    return (price - (price * discount))
+}
+// *
+// * Example:
+// * > var originalPrice = 100;
+// * > var discountPercent = .2; // 20%
+// * > applyDiscount(originalPrice, discountPercent) // 80
+// *
+// * > applyDiscount(45.99, 0.12) // 40.4712
+// */
+console.log(applyDiscount(120, .10));
