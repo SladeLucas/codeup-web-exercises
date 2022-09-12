@@ -14,62 +14,77 @@ function sayHello(name) {
 let userName = "Lucas"
 console.log(sayHello(userName));
 
-/**
- * TODO:
- * Call the function 'sayHello' and pass your name as a string literal argument.
- * Store the result of the function call in a variable named 'helloMessage'.
- *
- * console.log 'helloMessage' to check your work
- */
+///**
+// * TODO:
+// * Call the function 'sayHello' and pass your name as a string literal argument.
+// * Store the result of the function call in a variable named 'helloMessage'.
+// *
+// * console.log 'helloMessage' to check your work
+// */
 
-/**
- * TODO:
- * Store your name as a string in a variable named 'myName', and pass that
- * variable to the 'sayHello' function. You should see the same output in the
- * console.
- */
+let helloMessage = sayHello("Lucas")
+console.log(helloMessage);
+
+///**
+// * TODO:
+// * Store your name as a string in a variable named 'myName', and pass that
+// * variable to the 'sayHello' function. You should see the same output in the
+// * console.
+// */
+let myName = "Lucas"
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 var random = Math.floor((Math.random() * 3) + 1);
 
-/**
- * TODO:
- * Create a function called 'isTwo' that takes a number as a parameter.
- * The function should return a boolean value based on whether or not the passed
- * number is the number 2.
- *
- * Example
- * > isTwo(1) // returns false
- * > isTwo(2) // returns true
- * > isTwo(3) // returns false
- *
- * Call the function 'isTwo' passing the variable 'random' as a argument.
- *
- * console.log *outside of the function* to check your work (you should see a
- * different result everytime you refresh the page if you are using the random
- * number)
- */
+///**
+// * TODO:
+// * Create a function called 'isTwo' that takes a number as a parameter.
+// * The function should return a boolean value based on whether or not the passed
+// * number is the number 2.
+// *
+// * Example
+// * > isTwo(1) // returns false
+// * > isTwo(2) // returns true
+// * > isTwo(3) // returns false
+function isTwo(num) {
+    return num===2
+}
+//*
+//* Call the function 'isTwo' passing the variable 'random' as a argument.
+//*
+console.log(isTwo(random));
+//* console.log *outside of the function* to check your work (you should see a
+//* different result everytime you refresh the page if you are using the random
+//* number)
+//*/
 
-/**
- * TODO:
- * Create a function named 'calculateTip' to calculate a tip on a bill at a
- * restaurant. The function should accept a tip percentage and the total of the
- * bill, and return the amount to tip
- *
- * Examples:
- * > calculateTip(0.20, 20) // returns 4
- * > calculateTip(0.25, 25.50) // returns 6.375
- * > calculateTip(0.15, 33.42) // returns 5.013
- */
+///**
+// * TODO:
+// * Create a function named 'calculateTip' to calculate a tip on a bill at a
+// * restaurant. The function should accept a tip percentage and the total of the
+// * bill, and return the amount to tip
+// *
+// * Examples:
+// * > calculateTip(0.20, 20) // returns 4
+// * > calculateTip(0.25, 25.50) // returns 6.375
+// * > calculateTip(0.15, 33.42) // returns 5.013
+// */
+function calculateTip(tip, total) {
+    return tip * total
+}
 
-/**
- * TODO:
- * Use prompt and alert in combination with your calculateTip function to
- * prompt the user for the bill total and a percentage they would like to tip,
- * then display the dollar amount they should tip
- */
+///**
+// * TODO:
+// * Use prompt and alert in combination with your calculateTip function to
+// * prompt the user for the bill total and a percentage they would like to tip,
+// * then display the dollar amount they should tip
+// */
+let tipAmount = prompt("In decimal amounts, what percentage are you going to tip?")
+let billTotal = prompt("How much was the bill?")
 
+alert("$" + calculateTip(tipAmount, billTotal));
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
