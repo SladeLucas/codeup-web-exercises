@@ -24,17 +24,19 @@
 // */
 // Commented out the previous analyzeColor
 
-//let analyzeColor = "green"
-//    if (analyzeColor === "green") {
+//function analyzeColor(color) {
+//    if (color === "green") {
 //        console.log("green is cool")
-//    } else if (analyzeColor === "blue") {
+//    } else if (color === "blue") {
 //        console.log("blue is also cool")
-//    } else if (analyzeColor === "cyan") {
+//    } else if (color === "cyan") {
 //        console.log("i dont know about cyan")
 //    } else {
-//        console.log(analyzeColor() + " that's also a color")
+//        console.log(color + " that's also a color")
 //    }
+//}
 
+//analyzeColor("cyan")
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -48,62 +50,44 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 // * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
 // * You should see a different message every time you refresh the page
 // */
-//let analyzeColor = randomColor
-//   if (analyzeColor.toLowerCase() === "green") {
-//       alert("green is my favorite color.");
-//       console.log(analyzeColor);
-//   } else if (analyzeColor.toLowerCase() === "yellow") {
-//       alert(analyzeColor + " like your teeth!");
-//       console.log(analyzeColor);
-//   } else if (analyzeColor.toLowerCase() === "cyan") {
-//       alert("I dont know anything about cyan");
-//       console.log(analyzeColor);
-//   } else {
-//       alert(analyzeColor + " is a color that I see daily")
-//       console.log(analyzeColor);
-//   }
+//analyzeColor(randomColor);
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-//switch(analyzeColor) {
-//    case "green":
-//        alert("Green is my favorite color.")
-//        console.log(analyzeColor)
-//        break;
-//    case "yellow":
-//        alert("Yellow... Like your teeth!")
-//        console.log(analyzeColor)
-//        break;
-//    case "cyan":
-//        alert("I dont know about cyan")
-//        console.log(analyzeColor)
-//        break;
-//    default:
-//        alert(analyzeColor + " is a color that I see daily")
-//        console.log(analyzeColor)
-//        break;
-//}
+function analyzeColor(color) {
+    switch(color) {
+        case "green":
+            alert("Green is my favorite color.")
+            break;
+        case "yellow":
+            alert("Yellow... Like your teeth!")
+            break;
+        case "cyan":
+            alert("I dont know about cyan")
+            break;
+        default:
+            alert(color + " is a color that I see daily")
+            break;
+    }
+}
+//analyzeColor(randomColor)
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
- let analyzeColor = prompt("give me a color!");
-    if (analyzeColor.toLowerCase() === "green") {
-        alert("green is my favorite color.");
-        console.log(analyzeColor);
-    } else if (analyzeColor.toLowerCase() === "yellow") {
+let promColor = prompt("give me a color!");
+    if (promColor.toLowerCase() === "green") {
+    alert("green is my favorite color.");
+        } else if (promColor.toLowerCase() === "yellow") {
         alert("like your teeth!");
-        console.log(analyzeColor);
-    } else if (analyzeColor.toLowerCase() === "cyan") {
+        } else if (promColor.toLowerCase() === "cyan") {
         alert("I dont know anything about cyan");
-        console.log(analyzeColor);
     } else {
-        alert(analyzeColor + " is a color that I see daily")
-        console.log(analyzeColor);
-    }
+    alert(promColor + " is a color that I see daily")
+}
 /* ########################################################################## */
 
 /**
@@ -125,7 +109,24 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-
+function calculateTotal(x, y) {
+    if (x === 0 && y > 0) {
+        return y
+    } else if (x === 1 && y > 0) {
+        return y *.90
+    } else if (x === 2 && y > 0) {
+        return y * .75
+    } else if (x === 3 && y > 0) {
+        return y * .65
+    } else if (x === 4 && y > 0) {
+        return y * .50
+    } else if (x === 5 && y > 0) {
+        return y * 0
+    } else {
+        return x
+    }
+}
+//calculateTotal(12, 100)
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -134,8 +135,15 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+//Generate a random number between 0 and 6
+var luckyNumber = Math.floor(Math.random() * 6);
+let totalBill = prompt("What is the total bill?");
+alert(luckyNumber + " was your lucky number!");
+alert(totalBill + " was your price before discount");
+let calcTotal = calculateTotal(luckyNumber, totalBill);
+alert("Your total is " + calcTotal)
+
+
 
 /**
  * TODO:
@@ -155,4 +163,22 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+let typeNum = confirm("Would you like to enter a number?");
+function enterNum(x) {
+    if (typeNum === true) {
+        let numGames = parseFloat(prompt("What's the number then bud?"))
+        if (isNaN(numGames)) {
+            alert("That is not a number!");
+        } else {
+            (x % 2 == 0) ? alert("Thats a odd."):alert("that's an even");
+            (x >= 0) ? alert("That's positive"):alert("that's negative");
+            let math = parseInt(numGames)
+            alert(math + 100 + " is your number plus 100");
+        }
+    } else {
+        alert("Fine! no games then.");
+    }
+}
+console.log(enterNum(typeNum));
 })();
