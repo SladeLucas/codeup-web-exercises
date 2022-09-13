@@ -1,26 +1,45 @@
+(function () {
 "use strict";
 
 /* ########################################################################## */
 
-/**
- * TODO:
- * Create a function named `analyzeColor` that accepts a string that is a color
- * name as input. This function should return a message which relates to the
- * color stated in the argument of the function. For colors you do not have
- * responses written for, return a string stating so
- *
- * Example:
- *  > analyzeColor('blue') // returns "blue is the color of the sky"
- *  > analyzeColor('red') // returns "Strawberries are red"
- *
- *
- *  > analyzeColor('cyan') // returns "I don't know anything about cyan"
- *
- * You should use an if-else-if-else block to return different messages.
- *
- * Test your function by passing various string literals to it and
- * console.logging the function's return value
- */
+///**
+// * TODO:
+// * Create a function named `analyzeColor` that accepts a string that is a color
+// * name as input. This function should return a message which relates to the
+// * color stated in the argument of the function. For colors you do not have
+// * responses written for, return a string stating so
+// *
+// * Example:
+// *  > analyzeColor('blue') // returns "blue is the color of the sky"
+// *  > analyzeColor('red') // returns "Strawberries are red"
+// *
+// *
+// *  > analyzeColor('cyan') // returns "I don't know anything about cyan"
+// *
+// * You should use an if-else-if-else block to return different messages.
+// *
+// * Test your function by passing various string literals to it and
+// * console.logging the function's return value
+// */
+// Commented out the previous analyzeColor
+
+// let analyzeColor = prompt("give me a color!")
+
+//if (analyzeColor.toLowerCase() === "green") {
+//    alert("green is my favorite color.");
+//    console.log(analyzeColor);
+//} else if (analyzeColor.toLowerCase() === "yellow") {
+//    alert("like your teeth!");
+//    console.log(analyzeColor);
+//} else if (analyzeColor.toLowerCase() === "cyan") {
+//    alert("I dont know anything about cyan");
+//    console.log(analyzeColor);
+//} else {
+//    alert(analyzeColor + " is a color that I see daily")
+//    console.log(analyzeColor);
+//}
+
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -29,12 +48,25 @@
 //                  will contain a different color every time the page loads)
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
-/**
- * TODO:
- * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
- * You should see a different message every time you refresh the page
- */
-
+///**
+// * TODO:
+// * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
+// * You should see a different message every time you refresh the page
+// */
+let analyzeColor = randomColor
+    if (analyzeColor.toLowerCase() === "green") {
+        alert("green is my favorite color.");
+        console.log(analyzeColor);
+    } else if (analyzeColor.toLowerCase() === "yellow") {
+        alert(analyzeColor + " like your teeth!");
+        console.log(analyzeColor);
+    } else if (analyzeColor.toLowerCase() === "cyan") {
+        alert("I dont know anything about cyan");
+        console.log(analyzeColor);
+    } else {
+        alert(analyzeColor + " is a color that I see daily")
+        console.log(analyzeColor);
+    }
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
@@ -98,3 +130,4 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+})();
