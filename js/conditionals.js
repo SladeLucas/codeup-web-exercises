@@ -24,21 +24,16 @@
 // */
 // Commented out the previous analyzeColor
 
-// let analyzeColor = prompt("give me a color!")
-
-//if (analyzeColor.toLowerCase() === "green") {
-//    alert("green is my favorite color.");
-//    console.log(analyzeColor);
-//} else if (analyzeColor.toLowerCase() === "yellow") {
-//    alert("like your teeth!");
-//    console.log(analyzeColor);
-//} else if (analyzeColor.toLowerCase() === "cyan") {
-//    alert("I dont know anything about cyan");
-//    console.log(analyzeColor);
-//} else {
-//    alert(analyzeColor + " is a color that I see daily")
-//    console.log(analyzeColor);
-//}
+//let analyzeColor = "green"
+//    if (analyzeColor === "green") {
+//        console.log("green is cool")
+//    } else if (analyzeColor === "blue") {
+//        console.log("blue is also cool")
+//    } else if (analyzeColor === "cyan") {
+//        console.log("i dont know about cyan")
+//    } else {
+//        console.log(analyzeColor() + " that's also a color")
+//    }
 
 
 // Don't change the next two lines!
@@ -53,12 +48,54 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 // * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
 // * You should see a different message every time you refresh the page
 // */
-let analyzeColor = randomColor
+//let analyzeColor = randomColor
+//   if (analyzeColor.toLowerCase() === "green") {
+//       alert("green is my favorite color.");
+//       console.log(analyzeColor);
+//   } else if (analyzeColor.toLowerCase() === "yellow") {
+//       alert(analyzeColor + " like your teeth!");
+//       console.log(analyzeColor);
+//   } else if (analyzeColor.toLowerCase() === "cyan") {
+//       alert("I dont know anything about cyan");
+//       console.log(analyzeColor);
+//   } else {
+//       alert(analyzeColor + " is a color that I see daily")
+//       console.log(analyzeColor);
+//   }
+/**
+ * TODO:
+ * Comment out the code above, and refactor your function to use a switch-case statement
+ */
+//switch(analyzeColor) {
+//    case "green":
+//        alert("Green is my favorite color.")
+//        console.log(analyzeColor)
+//        break;
+//    case "yellow":
+//        alert("Yellow... Like your teeth!")
+//        console.log(analyzeColor)
+//        break;
+//    case "cyan":
+//        alert("I dont know about cyan")
+//        console.log(analyzeColor)
+//        break;
+//    default:
+//        alert(analyzeColor + " is a color that I see daily")
+//        console.log(analyzeColor)
+//        break;
+//}
+/**
+ * TODO:
+ * Prompt the user for a color when the page loads, and pass the input from the
+ * user to your `analyzeColor` function. Alert the return value from your
+ * function to show it to the user.
+ */
+ let analyzeColor = prompt("give me a color!");
     if (analyzeColor.toLowerCase() === "green") {
         alert("green is my favorite color.");
         console.log(analyzeColor);
     } else if (analyzeColor.toLowerCase() === "yellow") {
-        alert(analyzeColor + " like your teeth!");
+        alert("like your teeth!");
         console.log(analyzeColor);
     } else if (analyzeColor.toLowerCase() === "cyan") {
         alert("I dont know anything about cyan");
@@ -67,18 +104,6 @@ let analyzeColor = randomColor
         alert(analyzeColor + " is a color that I see daily")
         console.log(analyzeColor);
     }
-/**
- * TODO:
- * Comment out the code above, and refactor your function to use a switch-case statement
- */
-
-/**
- * TODO:
- * Prompt the user for a color when the page loads, and pass the input from the
- * user to your `analyzeColor` function. Alert the return value from your
- * function to show it to the user.
- */
-
 /* ########################################################################## */
 
 /**
