@@ -16,8 +16,7 @@ showMultiplicationTable(7)
             console.log(randomNum + " is odd")
         }
     }
-//let count = 1;
-    //for (let a = 1; a < 10; a++) {
+
 for(let i=1; i<10; i++){
     let Num='';
     for(let j=0; j<i; j++){
@@ -25,11 +24,8 @@ for(let i=1; i<10; i++){
     }
     console.log(Num);
 }
-        // for (let b = 1; b <= a; b++) {
-        //     output += b + ' ';
-        // }
-        // console.log(output);
-        // output = '';
-    //}
+for (let i=100; i > 0; i -= 5){
+    console.log(i);
+}
 
 })();
