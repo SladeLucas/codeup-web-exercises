@@ -111,6 +111,7 @@ person.sayHello();
     console.log(books[0].title);
     console.log(books[0].author.firstName);
     console.log(books[0].author.lastName);
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -135,7 +136,14 @@ person.sayHello();
      *      ---
      *      ...
      */
-
+    let x = 1
+    books.forEach(function(book){
+        let indexBook = x++;
+        console.log(`Book #${indexBook}
+        Title: ${book.title},
+        Author: ${book.author.firstName + ' ' + book.author.lastName}
+        ---`);
+    });
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -146,5 +154,14 @@ person.sayHello();
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    function createBook (input, input2) {
+        let Book = {
+            Title: input,
+            Author: input2
+        };
+        return Book;
+    };
+    console.log(createBook('Harry Potter', 'J.K Rowling'));
+    console.log(createBook(books[0].title, books[0].author.firstName + " " + books[0].author.lastName));
 
 })();
