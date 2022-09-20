@@ -50,11 +50,9 @@ person.sayHello();
         {name: 'George', amount: 320}
     ];
     let discount = .88
-    shoppers.forEach(function() {
-        if (shoppers.amount  > 200){
-            console.log(`${shoppers[1].name}s total is: ${shoppers[1].amount} after the discount of 12%, the total is: ${shoppers[1].amount * discount}`);
-            console.log(`${shoppers[2].name}s total is: ${shoppers[2].amount} after the discount of 12%, the total is: ${shoppers[2].amount * discount}`);
-
+    shoppers.forEach(function(shopper) {
+        if (shopper.amount > 200){
+            console.log(`${shopper.name}s total is: ${shopper.amount} after the discount of 12%, the total is: ${shopper.amount * discount}`);
         } else {
             return console.log(`${shoppers[0].name}s total is: ${shoppers[0].amount} which does not qualify for the discount and is the amount ${shoppers[0].name} will be paying`);
         }
