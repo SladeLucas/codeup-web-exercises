@@ -54,7 +54,7 @@ person.sayHello();
         if (shopper.amount > 200){
             console.log(`${shopper.name}s total is: ${shopper.amount} after the discount of 12%, the total is: ${shopper.amount * discount}`);
         } else {
-            return console.log(`${shoppers[0].name}s total is: ${shoppers[0].amount} which does not qualify for the discount and is the amount ${shoppers[0].name} will be paying`);
+            return console.log(`${shopper.name}s total is: ${shopper.amount} which does not qualify for the discount and is the amount ${shopper.name} will be paying`);
         }
     });
     //console.log(`${shoppers[1].name}s total is: ${shoppers[1].amount} after the discount of 12%, the total is: ${shoppers[1].amount * discount}`);
@@ -71,7 +71,46 @@ person.sayHello();
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-
+    let books = [
+        {
+            title: 'To Kill a Mockingbird',
+            author: {
+                firstName: 'Harper',
+                lastName: 'Lee'
+            }
+        },
+        {
+            title: 'The Host',
+            author: {
+                firstName: 'Stephenie',
+                lastName: 'Meyer'
+            }
+        },
+        {
+            title: 'The Book Thief',
+            author: {
+                firstName: 'Markus',
+                lastName: 'Zusak'
+            }
+        },
+        {
+            title: 'The Selection',
+            author: {
+                firstName: 'Kiera',
+                lastName: 'Cass'
+            }
+        },
+        {
+            title: 'The City of Ember',
+            author: {
+                firstName: 'Jeanne',
+                lastName: 'DuPrau'
+            }
+        }
+    ];
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
     /**
      * TODO:
      * Loop through the books array and output the following information about
