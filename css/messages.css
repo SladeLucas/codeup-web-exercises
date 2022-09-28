@@ -5,28 +5,37 @@ body, html {
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
+:root{
+    --bg-info: #afd8ff;
+    --text-info: #332b8e;
+    --bg-success: #bbffc3;
+    --text-success: #104010;
+    --bg-warning: #feff9e;
+    --text-warning: #8d8e15;
+    --bg-error: #ffd7c8;
+    --text-error: #63131b;
+}
 .message {
     padding: 8px;
     margin: 8px;
     border-radius: 4px;
-    background-color: #0fb784;
     border: solid;
     border-width: 1px;
     border-color: lightgray;
 }
 .message-success {
-    background-color: #bbffc3;
-    color: #104010;
+    background-color: var(--bg-success);
+    color: var(--text-success);
 }
 .message-error {
-    background-color: #ffd7c8;
-    color: #63131b;
+    background-color: var(--bg-error);
+    color: var(--text-error);
 }
 .message-info {
-    background-color: #afd8ff;
-    color: #332b8e;
+    background-color: var(--bg-info);
+    color: var(--text-info);
 }
 .message-warning {
-    background-color: #feff9e;
-    color: #8d8e15;
+    background-color: var(--bg-warning);
+    color: var(--text-warning);
 }
