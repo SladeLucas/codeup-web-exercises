@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+nav {
+    background: #a1aba3;
+    display: flex;
+    flex-wrap: wrap;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding: 1em;
+}
+nav a:hover {
+    background: blue;
+}
+.logo-div {
+    font-size: 3em;
+    padding-bottom: .2em;
+    padding-top: .2em;
+    font-family: "Work Sans";
+    display: flex;
+    justify-content: center;
+}
+.list1 {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.list2 {
+    display: flex;
+}
