@@ -13,6 +13,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
 }
 ul {
     list-style: none;
@@ -34,7 +35,7 @@ h1 {
     margin: 0;
     display: flex;
     text-align: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 .logo-div {
     font-family: Montserrat;
@@ -53,11 +54,12 @@ h1 {
     flex-wrap: wrap;
     justify-items: left;
     padding-left: 0;
+    justify-content: space-between;
 }
 .list2 {
     font-weight: bold;
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
 }
 .search {
     width: 15px;
