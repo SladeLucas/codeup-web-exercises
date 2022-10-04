@@ -1,3 +1,6 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Work+Sans&display=swap');
 * {
     box-sizing: border-box;
 }
@@ -6,11 +9,15 @@ body {
 }
 nav {
     background: #a1aba3;
+    font-family: Montserrat;
     display: flex;
+    margin: fill;
     flex-wrap: wrap;
+    align-items: center;
 }
 ul {
     list-style: none;
+    font-weight: bolder;
     padding: 0;
     margin: 0;
     display: flex;
@@ -24,19 +31,42 @@ nav a {
 nav a:hover {
     background: blue;
 }
+h1 {
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+}
 .logo-div {
+    font-family: Montserrat;
     font-size: 3em;
-    padding-bottom: .2em;
-    padding-top: .2em;
-    font-family: "Work Sans";
+    font-weight: bolder;
+    padding: .2em 0;
+    margin: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .list1 {
+    font-weight: bold;
     display: flex;
-    justify-content: space-between;
-    align-content: space-between;
+    flex-wrap: wrap;
+    justify-items: left;
+    padding-left: 0;
 }
 .list2 {
+    font-weight: bold;
     display: flex;
+    justify-content: right;
+}
+.search {
+    width: 15px;
+    height: 15px;
+}
+.cart {
+    width: 15px;
+    height: 15px;
+}
+.icon {
+    width: 15px;
+    height: 15px;
 }
