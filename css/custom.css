@@ -1,7 +1,43 @@
-body {
-    height: 80%;
-    width: 80%;
-    margin: 0 auto;
+
+.navbar {
+    display: block;
+    flex-direction: row;
+    width: 100%;
+}
+
+.jumbotron {
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.img-fluid {
+    height: 346px;
+}
+
+form {
+    display: inline-flex;
+    flex-direction: row;
+    width: 450px;
+    height: 35px;
+}
+.form-control {
+    width: 50%;
+    padding: 0;
+}
+.button-outline-success {
+    width: 60%;
+    display: inline-flex;
+    justify-content: center;
+    color: #3B94D9;
+    margin-left: auto;
+}
+.mr-sm-2 {
+    width: 200px;
+    margin-right: 5px;
+}
+.ml-auto {
+    margin-left: auto;
 }
 
 #pizzaimg {
