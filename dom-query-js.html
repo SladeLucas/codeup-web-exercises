@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>DOM: Query and Modify</title>
 </head>
-<body>
+<body id="bodyColor">
 
 <h1 id="main-header">Hello World!</h1>
 <ul>
@@ -24,20 +24,29 @@
   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
   culpa qui officia deserunt mollit anim id est laborum.
 </p>
-
+<button id="btn1">Change the Header</button>
+<button id="btn2">Change some colors</button>
+<button id="btn3">Change the paragraph</button>
+<button id="btn4">Black out</button>
 <script>
   (function() {
     "use strict";
     // TODO: Uncomment next line and get the main header element by id
-     var mainHeader = document.getElementById('main-header');
+    var mainHeader = document.getElementById('main-header');
 
     // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-    mainHeader.innerHTML = 'JavaScript is Cool';
+    var headerChange = function (event) {
+      mainHeader.innerHTML = 'JavaScript is Cool';
+    }
+    document.getElementById('btn1').addEventListener('click', headerChange);
     // TODO: Uncomment the next line and get the sub header element by id
     var subHeader = document.getElementById('sub-header');
-
+    var colorChange = function (event) {
+      subHeader.style.color = 'yellow';
+    }
+    document.getElementById('btn2').addEventListener('click', colorChange);
     // TODO: Set the text color of subHeader to blue
-    subHeader.style.color = 'blue';
+   //subHeader.style.color = 'blue';
     // TODO: Uncomment the next line and get all list items
     var listItems = document.getElementsByTagName('li');
 
@@ -57,8 +66,17 @@
     var subParagraphs = document.getElementsByClassName('sub-paragraph');
 
     // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-
+    var parChange = function (event) {
       subParagraphs[0].innerHTML = "Mission Accomplished!"
+    }
+    document.getElementById('btn3').addEventListener('click', parChange);
+      //subParagraphs[0].innerHTML = "Mission Accomplished!"
+
+    var pageColor = function (event) {
+      document.body.style.backgroundColor = 'black';
+    }
+
+    document.getElementById('btn4').addEventListener('click', pageColor);
 
   })();
 </script>
