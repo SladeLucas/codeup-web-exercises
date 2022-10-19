@@ -6,5 +6,5 @@ $(function() {
 
 });
 
-let contents = $('.header').html();
+let contents = $('#header').html();
 alert(contents);
