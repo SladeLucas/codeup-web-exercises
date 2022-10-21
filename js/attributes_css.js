@@ -27,6 +27,13 @@ $(document).ready(function() {
 //        'visibility': 'visible'
 //    }
 //);
-$("#reset").click(function(e){
-    location.reload();
+
+$("#highlighter").click(function(e){
+    $('li').each( function (index) {
+        if (index == 4) {
+            $(this).css('background-color', '#FF0');
+            $('#coolNP').children().last().css('background-color', '#FF0');
+            $('#neature').children().last().css('background-color', '#FF0');
+        }
+    });
 });
