@@ -64,3 +64,30 @@ $(document).ready(function() {
         $('#neature').children().first().css('color', 'blue');
     });
 });
+
+$('.picture_frame1').css({
+   'border': '3px solid blue',
+    'width': '100px',
+    'height': '100px',
+    'background-image': 'url(img/flowers.jpeg)',
+    'background-size': 'cover',
+    'background-repeat': 'no-repeat'
+});
+
+$('.picture_frame2').css({
+    'border': '3px solid black',
+    'width': '100px',
+    'height': '100px',
+    'background-image': 'url(img/smile.jpeg)',
+    'background-size': 'cover',
+    'background-repeat': 'no-repeat'
+});
+
+$('.picture_frame3').css({
+    'border': '3px solid green ',
+    'width': '100px',
+    'height': '100px',
+    'background-image': 'url(img/wave.jpeg)',
+    'background-size': 'cover',
+    'background-repeat': 'no-repeat'
+});

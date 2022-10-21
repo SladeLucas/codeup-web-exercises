@@ -4,6 +4,28 @@
     <meta charset="UTF-8">
     <title>Attributes and CSS</title>
     <style>
+      body {
+          text-align: center;
+      }
+      div {
+          flex-direction: row;
+          display: inline-block;
+          justify-content: center;
+          margin: 25px;
+          align-items: end;
+      }
+      button {
+          display: flex;
+          flex-direction: row;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      ul {
+          padding: 0;
+      }
+      li {
+          list-style: none;
+      }
       .important {
       text-align: center;
       color: deepskyblue;
@@ -44,6 +66,21 @@
   <li>Everglades</li>
 </ul>
 <button id="highlighter">Make Yellow</button>
+<div class="frameswap">
+    <div class="picture_frame1" id="picOne">
+
+    </div>
+
+    <div class="picture_frame2" id="picTwo">
+
+    </div>
+    <div class="picture_frame3" id="picThree">
+
+    </div>
+</div>
+<button id="picOneSwap">Swap</button>
+<button id="picTwoSwap">Swap</button>
+<button id="picThreeSwap">Swap</button>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/attributes_css.js"></script>
 </body>
