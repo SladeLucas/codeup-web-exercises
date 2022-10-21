@@ -15,9 +15,18 @@ $(document).ready(function() {
     });
 });
 
-
+$(document).ready(function() {
+    $('dt').click(function(event) {
+        event.preventDefault();
+        $('dd').toggleClass('highlighted');
+        $('body').css('background-color', 'yellow');
+    });
+});
 //$('.important').css({
 //        "color": 'red',
 //        'visibility': 'visible'
 //    }
 //);
+$("#reset").click(function(e){
+    location.reload();
+});
