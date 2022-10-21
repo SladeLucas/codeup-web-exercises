@@ -91,3 +91,51 @@ $('.picture_frame3').css({
     'background-size': 'cover',
     'background-repeat': 'no-repeat'
 });
+
+$('#picOneSwap').click(e=>{
+    let piconebg = $('#picOne').css('background')
+    let pictwobg = $('#picTwo').css('background')
+    //left to right
+    $('#picTwo').css({
+        background : piconebg
+    })
+
+    $('#picOne').css({
+        background : pictwobg
+    })
+})
+
+$('#picTwoSwap').click(e=>{
+    let piconebg = $('#picOne').css('background')
+    let pictwobg = $('#picTwo').css('background')
+    let picthreebg = $('#picThree').css('background')
+    //The center frame swaps randomly to either
+    if(Math.floor((Math.random() * 2) + 1) === 2){
+        $('#picTwo').css({
+            background : picthreebg
+        })
+        $('#picThree').css({
+            background : pictwobg
+        })
+    }else{
+        $('#picTwo').css({
+            background : piconebg
+        })
+        $('#picOne').css({
+            background : pictwobg
+        })
+    }
+})
+
+$('#picThreeSwap').click(e=>{
+    let picthreebg = $('#picThree').css('background')
+    let pictwobg = $('#picTwo').css('background')
+    //right to left
+    $('#picThree').css({
+        background : pictwobg
+    })
+
+    $('#picTwo').css({
+        background : picthreebg
+    })
+})
