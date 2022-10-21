@@ -43,3 +43,24 @@ $("#highlighter").click(function(e){
         }
     });
 });
+
+$(document).ready(function() {
+    $('#wNationalP').children().click(function(e) {
+        e.preventDefault();
+        $('#wNationalP').children().first().css('color', 'blue');
+    });
+});
+
+$(document).ready(function() {
+    $('#coolNP').children().click(function(e) {
+        e.preventDefault();
+        $('#coolNP').children().first().css('color', 'blue');
+    });
+});
+
+$(document).ready(function() {
+    $('#neature').children().click(function(e) {
+        e.preventDefault();
+        $('#neature').children().first().css('color', 'blue');
+    });
+});
