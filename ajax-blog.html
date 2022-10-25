@@ -12,7 +12,7 @@
 <header>
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">A's Blog</a>
+      <a class="navbar-brand" href="#">The Blog</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,7 +38,59 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 <script>
+  const retrievePosts = async () => {
+    try {
 
+      let posts = await $.get('data/blog.json')
+
+      posts.forEach(post => {
+        const postItem = document.createElement('div')
+
+        $(postItem).addClass('post')
+
+        const postTitle = document.createElement('h2')
+
+        $(postTitle).addClass('post_title')
+
+        $(postTitle).text(post.title)
+
+        const postContent = document.createElement('div')
+
+        $(postContent).addClass('post_content')
+
+        const hashtags = '#' + post.categories.join(` #`)
+
+        const hashtagsContainer = document.createElement('div')
+
+        $(hashtagsContainer).text(hashtags)
+
+        $(hashtagsContainer).css({
+          marginTop : '10px'
+        })
+
+        $(postContent).text(post.content)
+
+        $(postContent).append(hashtagsContainer)
+
+        const postDate = document.createElement('div')
+
+        $(postDate).text(post.date)
+
+        $(postItem).append(postTitle)
+
+        $(postItem).append(postContent)
+
+        $(postItem).append(postDate)
+
+        $(postItem).addClass('col')
+
+        $('#posts').append(postItem)
+      })
+    } catch (err) {
+      console.log("Error fetching posts.", err)
+    }
+  }
+  retrievePosts()
 </script>
 </body>
 </html>
