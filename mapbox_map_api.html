@@ -11,42 +11,32 @@
     <style>
         #map {
             /* the width and height may be set to any size */
-            width: 100%;
-            height: 700px;
+            width: 50%;
+            height: 400px;
         }
     </style>
 </head>
 <body>
 
-<h1>My First Mapbox Map!</h1>
+<h1 class="jumbotron ms-auto me-auto mb-5 text-center">My First Mapbox Map!</h1>
 
 <!-- The HTML element that serves as the Mapbox container -->
-<div id='map'></div>
+<div class="card d-flex ms-auto me-auto mt-3" id='map'></div>
 
 <!-- Mapbox JS -->
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
-
+<!-- external JS -->
+<script src="js/mapbox-geocoder-utils.js"></script>
 <!-- Custom JS -->
 <script>
     let accessToken = 'pk.eyJ1IjoibHNsYWRlOTgiLCJhIjoiY2w5b2JvaGpnMGZ6YzNwcXBzOHlpazZwMiJ9.KJisuTP4IjYhPQXPaB5ssA'
     mapboxgl.accessToken = accessToken;
-    //geocode function
-    function geocode(search, token) {
-        var baseUrl = 'https://api.mapbox.com';
-        var endPoint = '/geocoding/v5/mapbox.places/';
-        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
-            .then(function(res) {
-                return res.json();
-                // to get all the data from the request, comment out the following three lines...
-            }).then(function(data) {
-                return data.features[0].center;
-            });
-    }
+
 
     let map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
+        zoom: 12,
         center: [-111.88715860213884, 40.76325808626745]
     });
     let favRest = [
@@ -73,7 +63,11 @@
                 .setLngLat(coordinates)
                 .addTo(map)
                 .setPopup(popup);
+            marker.addr = category.address;
+            markers.push(marker);
+            popups.push(popup);
             popup.addTo(map);
+            $('.mapboxgl-popup').remove();
         });
     }
 
