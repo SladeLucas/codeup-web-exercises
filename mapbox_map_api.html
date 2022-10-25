@@ -32,8 +32,8 @@
 <select id="zoomlevel">
     <option selected value="">zoom</option>
     <option value= "5" id = "lowzoom">State</option>
-    <option value= "10" id = "medzoom">City</option>
-    <option value= "15" id = "bigzoom">Street</option></select>
+    <option value= "15" id = "medzoom">City</option>
+    <option value= "20" id = "bigzoom">Street</option></select>
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div class="card d-flex ms-auto me-auto mt-3" id='map'></div>
@@ -72,6 +72,8 @@
     });
     function placeMarkerAndPopup(info, token, map) {
         geocode(info.address, token).then(function(coordinates) {
+            const el = document.createElement('div');
+            el.className = "copperImg";
             let popup = new mapboxgl.Popup()
                 .setHTML(info.popupHTML);
             let marker = new mapboxgl.Marker()
@@ -84,18 +86,9 @@
             popup.addTo(map);
             $('.mapboxgl-popup').remove();
         });
-        let removeMark = function(mark){
-            $('.mapboxgl-marker').remove();
-        };
 
     }
-    let newMarkerPop = (category) => {
-        let catImg = document.createElement('img');
-        let popCon = document.createElement('div');
-        $(catImg).attr('src', category.image).css({
 
-        });
-    }
     placeMarkerAndPopup(favRest, accessToken, map);
 
     map.flyTo({
@@ -114,7 +107,16 @@
     function myFunction() {
         let x = document.getElementById("mySelect").value;
         document.getElementById('demo').innerHTML= "You selected: " + x;
-    }
+    };
+
+    const el = document.createElement('div');
+    el.className = 'copperImg';
+    new mapboxgl.Marker(el)
+        .setln
+    let removeMark = function(mark){
+        $('.mapboxgl-marker').remove();
+    };
+
 </script>
 </body>
 </html>
