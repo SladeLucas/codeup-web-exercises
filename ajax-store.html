@@ -2,29 +2,112 @@
 <html>
 <head>
   <title>Online Store</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"></head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
 <body>
+<header>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">The Tools</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" id="navbar-nav">
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="container">
+    <div class="row">
+      <table id="products">
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Categories</th>
+        </tr>
+        </thead>
+        <tbody id="insertProducts"></tbody>
+      </table>
+    </div>
+  </div>
+</main>
 
-<h1>My Tool Store</h1>
-<div class="container">
-  <table id="products" class="table table-striped">
-    <thead>
-    <tr>
-      <th>Title</th>
-      <th>Quantity</th>
-      <th>Price</th>
-      <th>Categories</th>
-    </tr>
-    </thead>
-    <tbody id="insertProducts"></tbody>
-  </table>
-  <button id="refresh-table" class="btn btn-primary">Refresh</button>
-</div>
-<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
+  (async function() {
+    "use strict";
 
+    let generateInventoryTable = async () => {
+      // TODO: Create an AJAX GET request for the file under data/inventory.json
+      let inventory = await $.get('data/inventory.json')
+
+      // TODO: Take the data from inventory.json and append it to the products table
+      //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+      //             its contents and fields
+      //       HINT: You will want to target #insertProducts for your new HTML elements
+
+      let table = document.getElementById('insertProducts')
+
+      $(table).html('')
+
+      let generateTableRow = (inventory_item) => {
+
+        let row = document.createElement('tr')
+
+        let titleCell = document.createElement('td')
+
+        $(titleCell).text(inventory_item.title)
+
+        let quantityCell = document.createElement('td')
+
+        $(quantityCell).text(inventory_item.quantity)
+
+        let priceCell = document.createElement('td')
+
+        $(priceCell).text(`$${inventory_item.price.toFixed(2)}`)
+
+        let categoriesCell = document.createElement('td')
+
+        let categoriesList = document.createElement('ul')
+
+        inventory_item.categories.forEach(category => {
+
+          let categoryListItem = document.createElement('li')
+
+          $(categoryListItem).text(category)
+
+          $(categoriesList).append(categoryListItem)
+        })
+
+        $(categoriesCell).append(categoriesList)
+
+        $(row).append(titleCell, quantityCell, priceCell, categoriesCell)
+        return row
+      }
+
+      inventory.forEach(item => {
+        let row = generateTableRow(item)
+        $(table).append(row)
+      })
+
+
+
+    }
+
+    let refreshButton = document.createElement('button')
+    $(refreshButton).text('Refresh Inventory')
+    $(refreshButton).click(()=>generateInventoryTable())
+    $(refreshButton).addClass('nav-item')
+    $('#navbar-nav').append(refreshButton)
+
+    generateInventoryTable()
+
+  })();
 </script>
-</body>
-</html>
