@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My First Mapbox Map!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+
+<!-- Custom JS -->
+<script>
+    let accessToken = 'pk.eyJ1IjoibHNsYWRlOTgiLCJhIjoiY2w5b2JvaGpnMGZ6YzNwcXBzOHlpazZwMiJ9.KJisuTP4IjYhPQXPaB5ssA'
+    mapboxgl.accessToken = accessToken;
+    //geocode function
+    function geocode(search, token) {
+        var baseUrl = 'https://api.mapbox.com';
+        var endPoint = '/geocoding/v5/mapbox.places/';
+        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+            .then(function(res) {
+                return res.json();
+                // to get all the data from the request, comment out the following three lines...
+            }).then(function(data) {
+                return data.features[0].center;
+            });
+    }
+
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-111.88715860213884, 40.76325808626745]
+    });
+    let favRest = [
+        {
+            popupHTML: "<div>Copper Onion</div>",
+            address: "111 E Broadway #170, Salt Lake City, UT 84111",
+        }, {
+            popupHTML: "<div>Ruth's Chris</div>",
+            address: "275 S W Temple St, Salt Lake City, UT 84101",
+        }, {
+            popupHTML: "<div>Cheesecake Factory</div>",
+            address: "65 Regent St, Salt Lake City, UT 84111",
+        }
+    ];
+    //function to draw marker
+    favRest.forEach(function (resturaunt){
+        placeMarkerAndPopup(resturaunt, accessToken, map)
+    });
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then(function(coordinates) {
+            let popup = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+            let marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+            popup.addTo(map);
+        });
+    }
+
+    //placeMarkerAndPopup(, accessToken, map);
+</script>
+</body>
+</html>
