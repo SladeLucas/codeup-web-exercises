@@ -41,19 +41,19 @@
     });
     let favRest = [
         {
-            popupHTML: "<div>Copper Onion</div>",
+            popupHTML: "<div>Copper Onion</div><p>A rustic dining experience located in the heart of Salt Lake</p>",
             address: "111 E Broadway #170, Salt Lake City, UT 84111",
         }, {
-            popupHTML: "<div>Ruth's Chris</div>",
+            popupHTML: "<div>Ruth's Chris</div><p>A Fine dining establishment located right outside a NBA arena</p>",
             address: "275 S W Temple St, Salt Lake City, UT 84101",
         }, {
-            popupHTML: "<div>Cheesecake Factory</div>",
+            popupHTML: "<div>Cheesecake Factory</div><p>A casual dinning experience with an enormous menu</p>",
             address: "65 Regent St, Salt Lake City, UT 84111",
         }
     ];
     //function to draw marker
-    favRest.forEach(function (resturaunt){
-        placeMarkerAndPopup(resturaunt, accessToken, map)
+    favRest.forEach(function (rest){
+        placeMarkerAndPopup(rest, accessToken, map)
     });
     function placeMarkerAndPopup(info, token, map) {
         geocode(info.address, token).then(function(coordinates) {
