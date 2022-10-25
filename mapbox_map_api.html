@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>First Mapbox Map</title>
+    <title>Mapbox Restaurant Map</title>
     <!-- Mapbox CSS -->
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
@@ -14,11 +14,26 @@
             width: 50%;
             height: 400px;
         }
+        .copperImg {
+            background-image: url("img/beef.jpeg");
+        }
+        .cheeseImg {
+            background-image: url("img/beef.jpeg");
+        }
+        .ruthImg {
+            background-image: url("img/beef.jpeg");
+        }
     </style>
 </head>
 <body>
 
 <h1 class="jumbotron ms-auto me-auto mb-5 text-center">My First Mapbox Map!</h1>
+
+<select id="zoomlevel">
+    <option selected value="">zoom</option>
+    <option value= "5" id = "lowzoom">State</option>
+    <option value= "10" id = "medzoom">City</option>
+    <option value= "15" id = "bigzoom">Street</option></select>
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div class="card d-flex ms-auto me-auto mt-3" id='map'></div>
@@ -41,13 +56,13 @@
     });
     let favRest = [
         {
-            popupHTML: "<div>Copper Onion</div><p>A rustic dining experience located in the heart of Salt Lake</p>",
+            popupHTML: "<div>Copper Onion</div><p>A rustic dining experience located in the heart of Salt Lake</p><ul><li>Best Dish: Beef</li></ul>",
             address: "111 E Broadway #170, Salt Lake City, UT 84111",
         }, {
-            popupHTML: "<div>Ruth's Chris</div><p>A Fine dining establishment located right outside a NBA arena</p>",
+            popupHTML: "<div>Ruth's Chris</div><p>A Fine dining establishment located right outside a NBA arena</p><ul><li>Best Dish: Steak</li></ul>",
             address: "275 S W Temple St, Salt Lake City, UT 84101",
         }, {
-            popupHTML: "<div>Cheesecake Factory</div><p>A casual dinning experience with an enormous menu</p>",
+            popupHTML: "<div>Cheesecake Factory</div><p>A casual dinning experience with an enormous menu</p><ul><li>Best Dish: Cheesecake</li></ul>",
             address: "65 Regent St, Salt Lake City, UT 84111",
         }
     ];
@@ -69,9 +84,37 @@
             popup.addTo(map);
             $('.mapboxgl-popup').remove();
         });
-    }
+        let removeMark = function(mark){
+            $('.mapboxgl-marker').remove();
+        };
 
-    //placeMarkerAndPopup(, accessToken, map);
+    }
+    let newMarkerPop = (category) => {
+        let catImg = document.createElement('img');
+        let popCon = document.createElement('div');
+        $(catImg).attr('src', category.image).css({
+
+        });
+    }
+    placeMarkerAndPopup(favRest, accessToken, map);
+
+    map.flyTo({
+        speed: 0.5,
+        center: [-111.88715860213884, 40.76325808626745],
+        zoom: 12
+    });
+
+    let zoom = document.getElementById("zoomlevel");
+
+    zoom.addEventListener("change", function(){
+        let zoomAmount = document.getElementById('zoomlevel').value;
+        map.setZoom(zoomAmount);
+    });
+
+    function myFunction() {
+        let x = document.getElementById("mySelect").value;
+        document.getElementById('demo').innerHTML= "You selected: " + x;
+    }
 </script>
 </body>
 </html>
