@@ -1,9 +1,8 @@
 "use strict";
 
 //calling the api
-const url = 'http://api.openweathermap.org/data/2.5/weather';
-const weatherData = $.get(url);
-$.get(url, {
+const url = 'http://api.openweathermap.org/data/2.5/weather?&appid='+MY_WEATHER_ID;
+const weatherData = $.get(url, {
     APPID: MY_WEATHER_ID,
     units: 'imperial',
     q:     "Salt Lake City, US"
@@ -15,9 +14,11 @@ $(document).ready(function(){
         let weatherNow = "";
         let condition = data.currently;
         let temp = parseInt(data.currently.temperature);
-        weatherNow += "<span class=\"interiortext\"> Today:</span>";
-        weatherNow += "<span class=\"interiortext\"> Currently: " + temp + "°F</span>";
-        weatherNow += "<span class=\"interiortext\">" + data.minutely.summary + "</span>";
+        weatherNow += "<div class=\"interiortext\"> Today:</div>";
+        weatherNow += "<div class=\"interiortext\"> Currently: " + temp + "°F</div>";
+        weatherNow += "<div class=\"interiortext\">" + data.minutely.summary + "</div>";
+
+        $("#today").html(weatherNow);
     })
 });
 function currentWea(obj){
