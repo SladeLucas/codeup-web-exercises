@@ -17,4 +17,9 @@ function currentWea(obj){
     weatherNow += '<div class="card"> Current temperature: " + temp + "°F</div>';
     weatherNow += '<img src=\"" + icon + "\">';
     $('#today').html(weatherNow);
+};
+
+function tomWea (data){
+    let hightemp = parseInt(data.daily.data[1].temperatureHigh);
+    let lowtemp = parseInt(data.daily.data[1].temperatureLow);
 }
