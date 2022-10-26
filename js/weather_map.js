@@ -12,10 +12,12 @@ $.get(url, {
 });
 $(document).ready(function(){
     weatherData.done(function(data){
-        let currentweather = "";
-        let condition = data.currently.icon;
+        let weatherNow = "";
+        let condition = data.currently;
         let temp = parseInt(data.currently.temperature);
-
+        weatherNow += "<span class=\"interiortext\"> Today:</span>";
+        weatherNow += "<span class=\"interiortext\"> Currently: " + temp + "°F</span>";
+        weatherNow += "<span class=\"interiortext\">" + data.minutely.summary + "</span>";
     })
 });
 function currentWea(obj){
@@ -24,7 +26,6 @@ function currentWea(obj){
     let temp = parseInt(obj.currently.temperature);
     weatherNow += '<div class=\"interiortext\"> Today:</div>';
     weatherNow += '<div class=\"interiortext\"> Current temperature: " + temp + "°F</div>';
-    weatherNow += '<img src=\"" + icon + "\">';
     $('#today').html(weatherNow);
 };
 
