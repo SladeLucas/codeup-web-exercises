@@ -15,5 +15,6 @@ function currentWea(obj){
     let condition = obj.currently;
     let temp = parseInt(obj.currently.temperature);
     weatherNow += '<div class="card"> Current temperature: " + temp + "°F</div>';
-
+    weatherNow += '<img src=\"" + icon + "\">';
+    $('#today').html(weatherNow);
 }
