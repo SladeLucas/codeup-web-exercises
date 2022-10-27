@@ -1,49 +1,52 @@
 "use strict";
 
+// $.ajax('url', {data}).done(function(data){
+//     // access to data
+// }).fail(function(err){
+//     console.log(err)
+// })
+
 //calling the api
 const url = 'http://api.openweathermap.org/data/2.5/weather?&appid='+MY_WEATHER_ID;
-const weatherData = $.get(url, {
-    APPID: MY_WEATHER_ID,
-    units: 'imperial',
-    q:     "Salt Lake City, US"
-}).done(function(data) {
+
+const getWeatherData = $.ajax(url, {data: {units: 'imperial', q: 'Salt Lake City'}}).done(function(data){
+    let temp = parseInt(data.main.temp);
+    let high = parseInt(data.main.temp_max);
     console.log(data);
+    $('#today').text('Current Temperature: '  + temp);
+    $('.list1-item1').text(high);
 });
-$(document).ready(function(){
-    weatherData.done(function(data){
-        let weatherNow = "";
-        let condition = data.currently;
-        let temp = parseInt(data.currently.temperature);
-        weatherNow += "<div class=\"interiortext\"> Today:</div>";
-        weatherNow += "<div class=\"interiortext\"> Currently: " + temp + "°F</div>";
-        weatherNow += "<div class=\"interiortext\">" + data.minutely.summary + "</div>";
 
-        $("#today").html(weatherNow);
-    })
-});
-function currentWea(obj){
-    let weatherNow = "";
-    let condition = obj.currently;
-    let temp = parseInt(obj.currently.temperature);
-    weatherNow += '<div class=\"interiortext\"> Today:</div>';
-    weatherNow += '<div class=\"interiortext\"> Current temperature: " + temp + "°F</div>';
-    $('#today').html(weatherNow);
-};
+//console.log(getWeatherData);
+// setting up the function (async) that will making a request to the API (eventually we'll pass in the city)
+//const getWeatherData = async (city) => {
 
-function tomWea (data){
-    let hightemp = parseInt(data.daily.data[1].temperatureHigh);
-    let lowtemp = parseInt(data.daily.data[1].temperatureLow);
-    let weather2 = "";
-    weather2 += "<div class =\"interiortext\">Tomorrow: </div>";
-    weather2 += "<span class=\"interiortext\"> High/Low: " + hightemp + "°F/" + lowtemp + "°F</span>";
-    $("#tomorrow").html(weather2);
-};
+    // making a GET req to the openweathermap aip
+    //const data = await $.get(url, {
+     //   units: 'imperial',
+     //   q: 'Salt Lake City'
+    //});
+    //console.log(data);
 
-function threeWea(data){
-    let hightemp = parseInt(data.daily.data[1].temperatureHigh);
-    let lowtemp = parseInt(data.daily.data[1].temperatureLow);
-    let weather3 = "";
-    weather3 += "<div class =\"interiortext\">Tomorrow: </div>";
-    weather3 += "<span class=\"interiortext\"> High/Low: " + hightemp + "°F/" + lowtemp + "°F</span>";
-    $("#tomorrow").html(weather3);
-}
+    // use data to be input into a card
+    // select (grab) existing cards using jquery
+    // access the temps you need from the data
+
+    // append the temps to existing cards
+    //
+
+
+
+    //$('#city_name').text(data.name);
+    //return data;
+//}
+//$(document).ready(function(data){
+    //getWeatherData(function(data){
+    //    console.log(data);
+    //    let weatherNow = "<h1>wowee</h1>";
+    //    let temp = parseInt(data.main.temp);
+    //    weatherNow += "<div> Today:</div>";
+    //    weatherNow += "<div> Currently: " + temp + "°F</div>";
+    //});
+    //$(document.body).createElement(weatherNow);
+// });
