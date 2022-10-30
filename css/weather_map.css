@@ -7,3 +7,12 @@ body {
 #navbar-brand {
     color: white !important;
 }
+#weatherDisplay>*{
+    color: black;
+}
+#map{
+    width: 50%;
+    height: 300px;
+    border: #000000 solid 2px;
+    border-radius: 1em;
+}

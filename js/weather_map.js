@@ -62,10 +62,6 @@ function renderWeather(lngLat){
                     <dt class="text-center">Wind:</dt>
                     <dl class="text-center">${data.current.wind_gust} mph</dl> 
                 </div>
-                <div class="row col-md">
-                    <dt class="text-center">Pressure:</dt>
-                    <dl class="text-center">${data.current.pressure} mmHg</dl>
-                </div>
             </dl>
         </div>
         `
@@ -92,8 +88,7 @@ function renderWeather(lngLat){
                             <dd class="row text-center d-block">${day.humidity}%</dd>
                             <dt class="row text-center d-block">Wind:</dt>
                             <dd class="row text-center d-block">${day.wind_gust} mph</dd>
-                            <dt class="row text-center d-block">Pressure:</dt>
-                            <dd class="row text-center d-block">${day.pressure} mmHg</dd>
+                            
                         </dl>
                     </div>
             `

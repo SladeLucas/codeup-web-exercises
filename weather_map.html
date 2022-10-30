@@ -16,7 +16,7 @@
 <body>
 <!-- NAV BAR -->
 <header>
-    <nav class="navbar navbar-expand-lg shadow bg-dark">
+    <nav class="navbar navbar-expand-lg shadow bg-transparent">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Fantastic MR. Weather Map</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,10 +45,10 @@
     </div>
     <form id="inputAddressForm" class="form">
         <div id="toggleInput" class="d-flex justify-content-center justify-content-md-start">
-            <label for="inputAddress"> Search:
-                <input id="inputAddress" type="text" placeholder="Enter Address...">
+            <label class="border border-danger rounded-pill" for="inputAddress">
+                <input class="rounded-pill" id="inputAddress" type="text" placeholder="Enter Address">
             </label>
-            <button type="submit" id="inputAddressSubmit">Search</button>
+            <button class="rounded-circle" type="submit" id="inputAddressSubmit">Search</button>
         </div>
     </form>
     <hr>
