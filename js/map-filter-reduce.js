@@ -59,3 +59,11 @@ console.log(longEmail);
 
 let userNames = users.reduce((acc, user) => acc += `${user.name} `, '');
 console.log(userNames);
+// bonus = hard
+let newLanguage = users.reduce((acc, e) => {
+    for(const lan of e.languages)
+        !acc.includes(lan) ? acc.push(lan): acc;
+    return acc;
+}, []);
+
+console.log(newLanguage);
