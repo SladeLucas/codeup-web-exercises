@@ -54,3 +54,5 @@ let yearEXPAverage = yearEXP / 5;
 
 console.log(yearEXPAverage);
 
+let longEmail = users.reduce((longEmail, user) => user.email.length > longEmail.length?user.email:longEmail, "");
+console.log(longEmail);
