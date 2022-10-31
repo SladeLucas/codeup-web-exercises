@@ -56,3 +56,6 @@ console.log(yearEXPAverage);
 
 let longEmail = users.reduce((longEmail, user) => user.email.length > longEmail.length?user.email:longEmail, "");
 console.log(longEmail);
+
+let userNames = users.reduce((acc, user) => acc += `${user.name} `, '');
+console.log(userNames);
