@@ -45,15 +45,15 @@ users.push({
 });
 
 // TODO: replace `var` with `let` in the following variable declarations
-var emails = [];
-var names = [];
+let emails = [];
+let names = [];
 
 // TODO: rewrite the following using arrow functions
-users.forEach(function(user) {
-    return emails.push(user.email);
+users.forEach (user => {
+    emails.push(user.email);
 });
-users.forEach(function(user) {
-    return names.push(user.name);
+users.forEach (user => {
+    names.push(user.name);
 });
 
 // TODO: replace `var` with `let` in the following declaration
