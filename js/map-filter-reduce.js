@@ -35,6 +35,11 @@ const users = [
         yearsOfExperience: 9
     }
 ];
+// setting variable ⇣⇣⇣⇣⇣⇣
 let langFilter = users.filter((ele) => ele.languages.length >= 3);
-
+// variable  is a filter function to single out certain objects
 console.log(langFilter);
+// set variable, then added 'ele.email' to create new []
+let emailArr = users.map((ele) => ele.email.toString())
+
+console.log(emailArr)
