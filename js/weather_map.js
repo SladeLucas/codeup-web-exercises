@@ -43,7 +43,7 @@ function renderWeather(lngLat){
     }).done(function(data){
         if(currentWeather) {
             let html = `
-        <div class="card mx-auto w-50 d-flex align-items-end">
+        <div class="card mx-auto w-50 d-flex bg-transparent border-0">
     
             <dl id="initialWeatherData" class="d-flex flex-column  flex-md-row align-items-center">
                 <div class="row col-md">
@@ -76,7 +76,7 @@ function renderWeather(lngLat){
                 colCount ++;
 
                 html +=`
-                     <div class="card col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                     <div class="card col-xs-12 col-sm-6 col-md-4 col-lg-3 bg-transparent">
                         <dl class="displayDay">
                             <dt class="row text-center d-block">Date:</dt>
                             <dd class="row text-center d-block">${date}</dd>
