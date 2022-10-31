@@ -40,6 +40,17 @@ let langFilter = users.filter((ele) => ele.languages.length >= 3);
 // variable  is a filter function to single out certain objects
 console.log(langFilter);
 // set variable, then added 'ele.email' to create new []
-let emailArr = users.map((ele) => ele.email.toString())
+let emailArr = users.map((ele) => ele.email.toString());
 
-console.log(emailArr)
+console.log(emailArr);
+// declare var using reduce to sum the total of an ele inside object inside array
+let yearEXP = users.reduce((total, ele) => {
+    return total + ele.yearsOfExperience;
+}, 0);
+
+console.log(yearEXP);
+
+let yearEXPAverage = yearEXP / 5;
+
+console.log(yearEXPAverage);
+
