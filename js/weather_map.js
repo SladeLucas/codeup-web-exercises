@@ -43,9 +43,9 @@ function renderWeather(lngLat){
     }).done(function(data){
         if(currentWeather) {
             let html = `
-        <div class="card mx-auto">
+        <div class="card mx-auto w-50 d-flex align-items-end">
     
-            <dl id="initialWeatherData" class="d-flex flex-column flex-md-row align-items-center">
+            <dl id="initialWeatherData" class="d-flex flex-column  flex-md-row align-items-center">
                 <div class="row col-md">
                     <dt class="text-center">Temperature:</dt>
                     <dl class="text-center">${data.current.temp}<span>&#176;</span>F</dl>

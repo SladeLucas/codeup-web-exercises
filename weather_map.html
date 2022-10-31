@@ -18,7 +18,7 @@
 <header>
     <nav class="navbar navbar-expand-lg shadow bg-transparent">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Fantastic MR. Weather Map</a>
+            <a class="navbar-brand" href="#"><img src="img/mustache.png" alt="Logo" width="30" height="30" class="logo me-2 d-inline-block align-text-top">MR. Weather Map</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -26,9 +26,6 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Other page</a>
                     </li>
                 </ul>
             </div>
@@ -43,18 +40,18 @@
         <button id="markerTypeToggle" class="btn btn-accent mx-1">Drop Pin</button>
         <button id="fiveDayLocalForecast" class="btn btn-accent mx-1">Five Day Forecast</button>
     </div>
-    <form id="inputAddressForm" class="form">
+    <form id="inputAddressForm" class="ms-lg-5 form">
         <div id="toggleInput" class="d-flex justify-content-center justify-content-md-start">
             <label class="border border-danger rounded-pill" for="inputAddress">
                 <input class="rounded-pill" id="inputAddress" type="text" placeholder="Enter Address">
             </label>
-            <button class="rounded-circle" type="submit" id="inputAddressSubmit">Search</button>
+            <button class="rounded" type="submit" id="inputAddressSubmit">Search</button>
         </div>
     </form>
     <hr>
     <!-- Weather Display Section -->
     <div id="weatherDisplayTitle" class="d-flex flex-column container ">
-        <h3>Location: </h3>
+        <h3 class="text-decoration-underline">Location: </h3>
         <p></p> <!-- innerHTML is loaded from js-->
     </div>
     <div class="container mx-auto transparentBG">
