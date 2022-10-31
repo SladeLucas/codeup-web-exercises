@@ -35,4 +35,6 @@ const users = [
         yearsOfExperience: 9
     }
 ];
-users.filter()
+let langFilter = users.filter((ele) => ele.languages.length >= 3);
+
+console.log(langFilter);
