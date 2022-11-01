@@ -16,8 +16,14 @@ function userLastCommit(username) {
         .then((response) => {
             response.json().then((events) => {
                 commit = (events[0].created_at);
+                commit = commit.slice(0, 10);
+                commit = commit.split('-');
+                let onlyDate = commit.shift();
+                    commit.push(onlyDate);
+                    commit = commit.join('-');
                 return commit;
             }).then(commit => console.log(`${username}'s last commit: ${commit}`))
         }).catch((err) => console.log(err));
 }
 userLastCommit('SladeLucas')
+userLastCommit('MilesRaker')
